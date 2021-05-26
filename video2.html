@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="root">
+		<input type="text" id="input" v-model="message">
+		<h2> There is anew message {{message}} </h2>
+	</div>
+
+	<script>
+		new Vue({
+			el:"#root",
+			data : {
+				message : "Hello World"
+			}
+		})
+	</script>
+</body>
+</html>

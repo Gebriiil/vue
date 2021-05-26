@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.red-button{
+			color:red;
+		}
+		.blue-button{
+			color: blue;
+		}
+		.isloading{
+			background-color: yellow;
+		}
+	</style>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="root">
+		<button v-bind:title="vueTitle" :class="{'isloading' : isloading }" @click="toggole">Add Name</button>
+		<button :title="vueTitle" :class="buttonClass" @click="makeBlue">changeColor</button>
+		<!-- v-bind:title == :title -->
+	</div>
+
+	<script>
+		new Vue({
+			el:"#root",
+			data : {
+				vueTitle:"That is vue js title",
+				buttonClass:"red-button",
+				isloading : false
+			},
+			methods : {
+				makeBlue(){
+					if (this.buttonClass=="blue-button") {
+						this.buttonClass="red-button"
+					}else{
+						this.buttonClass="blue-button"
+					}
+				},
+				toggole(){
+					if(this.isloading == true){
+						this.isloading= false
+					}else{
+						this.isloading = true;
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

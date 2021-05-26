@@ -1,0 +1,22 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  </head>
+  <body style="padding: 20px;">
+    <div id="root">
+		<coupon @applied="onCouponApplied"></coupon>
+		<h1 v-if="couponIsApplied">coupon has applied!</h1>
+
+    </div>
+    
+
+    <script src="../vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="root">
+		<h2>All Tasks</h2>
+		<ul>
+			<li v-for="task of tasks" v-text="task.description">
+				
+			</li>
+		</ul>
+
+		<h2>Incompleted Tasks</h2>
+		<ul>
+			<li v-for="task of incompleted" v-text="task.description">
+				
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		new Vue({
+			el:"#root",
+			data : {
+				tasks : [
+					{ description : "first task" , completed : true },
+					{ description : "second task" , completed : false },
+					{ description : "third task" , completed : false },
+					{ description : "fourth task" , completed : false },
+					{ description : "fifth task" , completed : true },
+				]
+			},
+			computed : {
+				incompleted(){
+					return this.tasks.filter(task => !task.completed)
+				}
+			}
+			
+		})
+	</script>
+</body>
+</html>
